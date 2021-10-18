@@ -29,28 +29,30 @@ Built With:
 ![Alt text](./assets/images/calendar-webpage-screenshot.png "webpage screenshot") 
 
 ## USER STORY
-AS A coding boot camp student <br />
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores <br />
-SO THAT I can gauge my progress compared to my peers <br />
+AS AN employee with a busy schedule <br />
+I WANT to add important events to a daily planner <br />
+SO THAT I can manage my time effectively <br />
 
 ## ACCEPTANCE CRITERIA
 
-GIVEN I am taking a code quiz <br />
-WHEN I click the start button <br />
-THEN a timer starts and I am presented with a question <br />
-WHEN I answer a question <br />
-THEN I am presented with another question <br />
-WHEN I answer a question incorrectly <br />
-THEN time is subtracted from the clock <br />
-WHEN all questions are answered or the timer reaches 0 <br />
-THEN the game is over <br />
-WHEN the game is over <br />
-THEN I can save my initials and score <br />
+GIVEN I am using a daily planner to create a schedule <br />
+WHEN I open the planner <br />
+THEN the current day is displayed at the top of the calendar <br />
+WHEN I scroll down <br />
+THEN I am presented with time blocks for standard business hours <br />
+WHEN I view the time blocks for that day <br />
+THEN each time block is color-coded to indicate whether it is in the past, present, or future <br />
+WHEN I click into a time block <br />
+THEN I can enter an event <br />
+WHEN I click the save button for that time block <br />
+THEN the text for that event is saved in local storage <br />
+WHEN I refresh the page <br />
+THEN the saved events persist <br />
 
 ## ACCESS
-https://paperpatch.github.io/weekly-challenge-4/
+https://paperpatch.github.io/weekly-challenge-5/
 
-Version edits and changes can be found in Github commit changes at https://github.com/paperpatch/weekly-challenge-4/
+Version edits and changes can be found in Github commit changes at https://github.com/paperpatch/weekly-challenge-5/
 
 ## CONTRIBUTION
 Made by Patrick Chen
