@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <header class="jumbotron">
+    <header class="jumbotron sticky-top bg-white">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
@@ -21,99 +21,130 @@
     <main class="container">
       <!-- Time Placeholders -->
       <div class="row align-items-center border border-info h-100">
-        <div class="col">
+        <div class="col-2">
           Time
         </div>
+        <ul class="col-3 list-group list-group-flush align-items-start">Event</ul>
       </div>
       <div class="row align-items-center border border-info">
         <div class="col-2">
           8AM
         </div>
-        <ul id="list-8am" class="col-7 list-group list-group-flush flex-column"></ul>
+        <ul id="list-time8am" class="col-7 list-group list-group-flush flex-column">test1</ul>
+        <div class="col-1 text-center right-add">test2</div>
+        <div class="col-1 text-center right-trash">test3</div>
       </div>
       <div class="row align-items-center border border-info">
         <div class="col">
           9AM
         </div>
-        <ul id="list-9am" class="col-7 list-group list-group-flush flex-column"></ul>
+        <ul id="list-time9am" class="col-7 list-group list-group-flush flex-column"></ul>
+        <div class="text-center right-add"></div>
+        <div class="text-center right-trash"></div>
       </div>
       <div class="row align-items-center border border-info">
         <div class="col">
           10AM
         </div>
-        <ul id="list-10am" class="col-7 list-group list-group-flush flex-column"></ul>
+        <ul id="list-time10am" class="col-7 list-group list-group-flush flex-column"></ul>
+        <div class="text-center right-add"></div>
+        <div class="text-center right-trash"></div>
       </div>
       <div class="row align-items-center border border-info">
         <div class="col">
           11AM
         </div>
-        <ul id="list-11am" class="col-7 list-group list-group-flush flex-column"></ul>
+        <ul id="list-time11am" class="col-7 list-group list-group-flush flex-column"></ul>
+        <div class="text-center right-add"></div>
+        <div class="text-center right-trash"></div>
       </div>
       <div class="row align-items-center border border-info">
         <div class="col">
           12PM
         </div>
-        <ul id="list-12pm" class="col-7 list-group list-group-flush flex-column"></ul>
+        <ul id="list-time12pm" class="col-7 list-group list-group-flush flex-column"></ul>
+        <div class="text-center right-add"></div>
+        <div class="text-center right-trash"></div>
       </div>
       <div class="row align-items-center border border-info">
         <div class="col">
           1PM
         </div>
-        <ul id="list-1pm" class="col-7 list-group list-group-flush flex-column"></ul>
+        <ul id="list-time1pm" class="col-7 list-group list-group-flush flex-column"></ul>
+        <div class="text-center right-add"></div>
+        <div class="text-center right-trash"></div>
       </div>
       <div class="row align-items-center border border-info">
         <div class="col">
           2PM
         </div>
-        <ul id="list-2pm" class="col-7 list-group list-group-flush flex-column"></ul>
+        <ul id="list-time2pm" class="col-7 list-group list-group-flush flex-column"></ul>
+        <div class="text-center right-add"></div>
+        <div class="text-center right-trash"></div>
       </div>
       <div class="row align-items-center border border-info">
         <div class="col">
           3PM
         </div>
-        <ul id="list-3pm" class="col-7 list-group list-group-flush flex-column"></ul>
+        <ul id="list-time3pm" class="col-7 list-group list-group-flush flex-column"></ul>
+        <div class="text-center right-add"></div>
+        <div class="text-center right-trash"></div>
       </div>
       <div class="row align-items-center border border-info">
         <div class="col">
           4PM
         </div>
-        <ul id="list-4pm" class="col-7 list-group list-group-flush flex-column"></ul>
+        <ul id="list-time4pm" class="col-7 list-group list-group-flush flex-column"></ul>
+        <div class="text-center right-add"></div>
+        <div class="text-center right-trash"></div>
       </div>
       <div class="row align-items-center border border-info">
         <div class="col">
           5PM
         </div>
-        <ul id="list-5pm" class="col-7 list-group list-group-flush flex-column"></ul>
+        <ul id="list-time5pm" class="col-7 list-group list-group-flush flex-column"></ul>
+        <div class="text-center right-add"></div>
+        <div class="text-center right-trash"></div>
       </div>
       <div class="row align-items-center border border-info">
         <div class="col">
           6PM
         </div>
-        <ul id="list-6pm" class="col-7 list-group list-group-flush flex-column"></ul>
+        <ul id="list-time6pm" class="col-7 list-group list-group-flush flex-column"></ul>
+        <div class="text-center right-add"></div>
+        <div class="text-center right-trash"></div>
       </div>
       <div class="row align-items-center border border-info">
         <div class="col">
           7PM
         </div>
-        <ul id="list-7pm" class="col-7 list-group list-group-flush flex-column"></ul>
+        <ul id="list-time7pm" class="col-7 list-group list-group-flush flex-column"></ul>
+        <div class="text-center right-add"></div>
+        <div class="text-center right-trash"></div>
       </div>
       <div class="row align-items-center border border-info">
         <div class="col">
           8PM
         </div>
-        <ul id="list-8pm" class="col-7 list-group list-group-flush flex-column"></ul>
+        <ul id="list-time8pm" class="col-7 list-group list-group-flush flex-column"></ul>
+        <div class="text-center right-add"></div>
+        <div class="text-center right-trash"></div>
       </div>
       <div class="row align-items-center border border-info">
         <div class="col">
           9PM
         </div>
-        <ul id="list-9pm" class="col-7 list-group list-group-flush flex-column"></ul>
+        <ul id="list-time9pm" class="col-7 list-group list-group-flush flex-column"></ul>
+        <div class="text-center right-add"></div>
+        <div class="text-center right-trash"></div>
       </div>
       <div class="row align-items-center border border-info">
         <div class="col">
           10PM
         </div>
-        <ul id="list-10pm" class="col-7 list-group list-group-flush flex-column"></ul>
+        <ul id="list-time10pm" class="col-7 list-group list-group-flush flex-column"></ul>
+        <div class="text-center right-add"></div>
+        <div class="text-center right-trash"></div>
       </div>
     </main>
 
