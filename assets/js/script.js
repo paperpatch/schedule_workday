@@ -67,7 +67,7 @@ function updateClock() {
   let today = new Date();
   var formatToday = moment(today).format('MMMM Do YYYY, h:mm a');
   $("#currentDay").html(formatToday);
-  setInterval(updateClock, 60 * 1000);
+  setInterval(updateClock, 60 * 1000); // every minute
 }
 updateClock();
 
@@ -76,7 +76,6 @@ updateClock();
 function timeState() {
   let hours = new Date();
   var time = hours.getHours();
-  console.log(time);
 
   // make data-attribute values into an array
   var dataArray = [];
@@ -84,15 +83,8 @@ function timeState() {
     dataArray.push( $(this).attr("data-number"));
   })
 
-  var dataObject = document.querySelectorAll('[data-number].target')
-  console.log(dataObject);
-  // console.log(dataArray);
-  // console.log(document.querySelectorAll('[data-number]'))
-  // console.log(dataObject.target)
-
   // remove any old classes
   let changeClass = $(".row");
-  console.log(changeClass);
   $(changeClass).removeClass("past present future");
 
   for (let i=0; i<dataArray.length; i++) {
@@ -104,10 +96,7 @@ function timeState() {
       $(changeClass[i]).addClass("past");
     }
   }
-
-
-
-  setInterval(timeState, 600000);
+  setInterval(timeState, 600000); // every 10 minutes
 }
 timeState();
 
