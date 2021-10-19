@@ -6,6 +6,7 @@ var createTask = function(taskText, /* taskDate, */ taskList) {
   var taskLi = $("<li>").addClass("list-group-item");
   // var taskSpan = $("<span>").addClass("badge badge-primary badge-pill").text(taskDate);
   
+  
   var taskP = $("<p>")
     .addClass("m-1")
     .text(taskText);
@@ -14,7 +15,7 @@ var createTask = function(taskText, /* taskDate, */ taskList) {
   taskLi.append(taskP);
 
   // check due date
-  auditTask(taskLi);
+  // auditTask(taskLi);
 
   // append to ul list on the page
   $("#list-" + taskList).append(taskLi);
@@ -59,6 +60,20 @@ var saveTasks = function() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
+
+/* Moment JS and Time */
+
+function updateClock() {
+  var today = new Date();
+
+  var formatToday = moment(today).format('MMMM Do YYYY, h:mm:ss a');
+  $("#currentDay").html(formatToday);
+  setInterval(updateClock, 1000);
+}
+updateClock();
+
+var time = today.getHours();
+
 /* Draggable & Sortable Feature on List-Group Elements */
 
 $(".list-group").sortable({
@@ -69,9 +84,43 @@ $(".list-group").sortable({
   helper: "clone",
   activate: function(event, ui) {
     $(this).addClass("dropover");
-    $(".bottom-trash").addClass("bottom-trash-drag")
+    $(".right-trash").addClass("right-trash-drag");
+  },
+  deactivate: function(event, ui) {
+    $(this).removeClass("dropover");
+    $(".right-trash").removeClass("right-trash-drag");
+  },
+  over: function(event) {
+    $(event.target).addClass("dropover-active");
+  },
+  out: function(event) {
+    $(event.target).removeClass("dropover-active");
+  },
+  update: function() {
+    var tempArr = [];
+
+    // loop over current set of children in sortable list
+    $(this)
+      .children()
+      .each(function() {
+        tempArr.push({
+          text: $(this)
+            .find("p")
+            .text()
+            .trim(),
+        });
+      });
+    
+    // trim down list's ID to match object property
+    var arrName = $(this)
+      .attr("id")
+      .replace("list-", "");
+
+    // update array on tasks object and save
+    tasks[arrName] = tempArr;
+    saveTasks();
   }
-})
+});
 
 //
 
