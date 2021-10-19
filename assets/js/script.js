@@ -61,18 +61,56 @@ var saveTasks = function() {
 }
 
 
-/* Moment JS and Time */
+/* Moment JS and Front Page Time */
 
 function updateClock() {
-  var today = new Date();
-
-  var formatToday = moment(today).format('MMMM Do YYYY, h:mm:ss a');
+  let today = new Date();
+  var formatToday = moment(today).format('MMMM Do YYYY, h:mm a');
   $("#currentDay").html(formatToday);
-  setInterval(updateClock, 1000);
+  setInterval(updateClock, 60 * 1000);
 }
 updateClock();
 
-var time = today.getHours();
+/* Update Time Slots Section */
+
+function timeState() {
+  let hours = new Date();
+  var time = hours.getHours();
+  console.log(time);
+
+  // make data-attribute values into an array
+  var dataArray = [];
+  $('.row').each( function() {
+    dataArray.push( $(this).attr("data-number"));
+  })
+
+  var dataObject = document.querySelectorAll('[data-number].target')
+  console.log(dataObject);
+  // console.log(dataArray);
+  // console.log(document.querySelectorAll('[data-number]'))
+  // console.log(dataObject.target)
+
+  // remove any old classes
+  let changeClass = $(".row");
+  console.log(changeClass);
+  $(changeClass).removeClass("past present future");
+
+  for (let i=0; i<dataArray.length; i++) {
+    if (time < dataArray[i]) {
+      $(changeClass[i]).addClass("future");
+    } else if (time === dataArray[i]) {
+      $(changeClass[i]).addClass("present");
+    } else if (time > dataArray[i]) {
+      $(changeClass[i]).addClass("past");
+    }
+  }
+
+
+
+  setInterval(timeState, 600000);
+}
+timeState();
+
 
 /* Draggable & Sortable Feature on List-Group Elements */
 
