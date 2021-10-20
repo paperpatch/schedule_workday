@@ -85,7 +85,7 @@ var loadTasks = function() {
   $.each(tasks, function(list, arr) {
     // then loop over sub-array
     arr.forEach(function(task) {
-      createTask(task.text, task.title, list);
+      createTask(task.title, task.text, list);
     });
   });
 };
@@ -94,24 +94,7 @@ var saveTasks = function() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 };
 
-// trash icon can be dropped onto
-$("#trash").droppable({
-  accept: ".card .list-group-item",
-  tolerance: "touch",
-  drop: function(event, ui) {
-    // remove dragged element from the dom
-    ui.draggable.remove();
-    $(".bottom-trash").removeClass("bottom-trash-active");
-  },
-  over: function(event, ui) {
-    console.log(ui);
-    $(".bottom-trash").addClass("bottom-trash-active");
-  },
-  out: function(event, ui) {
-    $(".bottom-trash").removeClass("bottom-trash-active");
-  }
-});
-
+/* Model Section */
 
 // modal was triggered
 $("#task-form-modal").on("show.bs.modal", function() {
@@ -130,8 +113,6 @@ $("#task-form-modal .btn-save").click(function() {
   // get form values
   var taskTitle = $("#modalTitle").val();
   var taskText = $("#modalTaskDescription").val();
-  console.log(taskTitle)
-  console.log(taskText);
 
   if (taskText && taskTitle) {
     createTask(taskTitle, taskText, "time8am");
@@ -144,13 +125,54 @@ $("#task-form-modal .btn-save").click(function() {
       title: taskTitle,
       text: taskText,
     });
-    console.log(tasks);
 
     saveTasks();
   }
 });
 
-// task text was clicked
+/* Click Changing Task Title Section */
+
+$(".list-group").on("click", "span", function() {
+  // get current text
+  var title = $(this)
+    .text()
+    .trim();
+
+  // create new input element
+  var titleInput = $("<input>").attr("type", "text").addClass("form-control").val(title);
+  $(this).replaceWith(titleInput);
+
+  // auto focus new element
+  titleInput.trigger("focus");
+});
+
+// value of title was changed
+$(".list-group").on("change", "input[type='text']", function() {
+  var title = $(this).val();
+
+  // get status type and position in the list
+  var status = $(this)
+    .closest(".list-group")
+    .attr("id")
+    .replace("list-", "");
+  var index = $(this)
+    .closest(".list-group-item")
+    .index();
+
+  // update task in array and re-save to localstorage
+  tasks[status][index].title = title;
+  saveTasks();
+
+  // recreate span and insert in place of input element
+  var taskSpan = $("<span>")
+    .addClass("badge badge-primary badge-pill")
+    .text(title);
+    $(this).replaceWith(taskSpan);
+});
+
+
+/* Click Changing Task Description Section */
+
 $(".list-group").on("click", "p", function() {
   // get current text of p element
   var text = $(this)
@@ -192,7 +214,33 @@ $(".list-group").on("blur", "textarea", function() {
   $(this).replaceWith(taskP);
 });
 
-// remove all tasks
+
+/* Trash Droppable Icon Section */
+
+$("#trash").droppable({
+  accept: ".card .list-group-item",
+  tolerance: "touch",
+  drop: function(event, ui) {
+    // remove dragged element from the dom
+    ui.draggable.remove();
+    $(".bottom-trash").removeClass("bottom-trash-active");
+  },
+  over: function(event, ui) {
+    console.log(ui);
+    $(".bottom-trash").addClass("bottom-trash-active");
+  },
+  out: function(event, ui) {
+    $(".bottom-trash").removeClass("bottom-trash-active");
+  }
+});
+
+
+
+
+
+
+/* Remove All Tasks Section */
+
 $("#remove-tasks").on("click", function() {
   for (var key in tasks) {
     tasks[key].length = 0;

@@ -29,11 +29,9 @@ main {
 
 /* Time Block Section */
 
-.row {
-  white-space: pre-wrap;
-  height: 80px;
-  border-top: 1px solid white;;
-}
+/* .row {
+  display: flex;
+} */
 
 .hour {
   background-color: #ffffff;
