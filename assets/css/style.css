@@ -1,3 +1,5 @@
+/* Main Section */
+
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -29,10 +31,12 @@ main {
   white-space: pre-wrap;
 }
 
-.time-block{
+/* Time Blocks Section */
+
+/* .time-block{
   text-align: center;
   border-radius: 15px;
-}
+} */
 
 .row {
   white-space: pre-wrap;
@@ -61,6 +65,8 @@ main {
   color: black;
 }
 
+/* Buttons and Icons Section */
+
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
@@ -82,14 +88,18 @@ main {
   background-color: rgba(0,0,0,0.9);
 }
 
-/* .right-trash {
-  opacity: 0;
+.right-trash {
+  display: none;
   color: #f1f1f1;
-  font-size: 2.3rem;
-  font-family: "Staatliches", sans-serif;
-  transform: translateY(150px);
-  transition: all .5s ease-in-out;
+  height: 100%;
+  text-align: center;
+  line-height: 75px;
+  transform: translateX(0px);
+  font-size: 17px;
   background-color: rgba(234, 0, 39, 0.7);
+  background-image: linear-gradient(180deg, #FF9A8B 0%, #EA0028 100%);
+  transition: all .5s ease-in-out;
+
 }
 
 .right-trash-drag {
@@ -99,10 +109,15 @@ main {
 
 .right-trash-active {
   background-color: rgba(234, 0, 39, 1)
-} */
+}
+
+.hide {
+  display: none;
+}
 
 .btn-add,
 .btn-save {
+  height: 100%;
   background-color: #fa8bff;
   background-image: linear-gradient(45deg, #FA8BFF, 0%, #2BD2FF 52%, #2BFF88 90%);
   transition: all .5s ease-out;
