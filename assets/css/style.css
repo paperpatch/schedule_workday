@@ -27,16 +27,7 @@ main {
   margin: 3rem;
 }
 
-.description{
-  white-space: pre-wrap;
-}
-
-/* Time Blocks Section */
-
-/* .time-block{
-  text-align: center;
-  border-radius: 15px;
-} */
+/* Time Block Section */
 
 .row {
   white-space: pre-wrap;
@@ -65,6 +56,12 @@ main {
   color: black;
 }
 
+/* Modal Section */
+
+.modal-body {
+  line-height: 2.5;
+}
+
 /* Buttons and Icons Section */
 
 .saveBtn {
@@ -80,6 +77,35 @@ main {
   transition: all .3s ease-in-out;
 }
 
+.btn-add,
+.btn-save {
+  height: 100%;
+  background-color: #fa8bff;
+  background-image: linear-gradient(45deg, #FA8BFF, 0%, #2BD2FF 52%, #2BFF88 90%);
+  transition: all .5s ease-out;
+  background-size: 1px 100px;
+  background-position: 0 -10px;
+}
+
+.btn-close {
+  width: 20%;
+}
+
+.btn-close,
+.btn-delete {
+  height: 100%;
+  color: white;
+  background-color: #EA0028;
+  background-image: linear-gradient(180deg, #FF9A8B 0%, #EA0028 100%);
+  transition: all .5s ease-out;
+  background-size: 1px 100px;
+  background-position: 0 -10px;
+}
+
+.btn-add:hover, .btn-save:hover, .btn-close:hover, .btn-delete:hover {
+  background-position: 1px -50px;
+}
+
 .dropover {
   background-color: rgba(0,0,0,0.3);
 }
@@ -88,14 +114,13 @@ main {
   background-color: rgba(0,0,0,0.9);
 }
 
+/* Trash Section */
+
 .bottom-trash {
-  display: none;
+  opacity: 0;
   color: #f1f1f1;
-  height: 100%;
-  text-align: center;
-  line-height: 75px;
-  transform: translateX(0px);
-  font-size: 17px;
+  font-size: 2.3rem;
+  transform: translateY(150px);
   background-color: rgba(234, 0, 39, 0.7);
   background-image: linear-gradient(180deg, #FF9A8B 0%, #EA0028 100%);
   transition: all .5s ease-in-out;
@@ -109,27 +134,4 @@ main {
 
 .bottom-trash-active {
   background-color: rgba(234, 0, 39, 1)
-}
-
-.btn-add,
-.btn-save {
-  height: 100%;
-  background-color: #fa8bff;
-  background-image: linear-gradient(45deg, #FA8BFF, 0%, #2BD2FF 52%, #2BFF88 90%);
-  transition: all .5s ease-out;
-  background-size: 1px 100px;
-  background-position: 0 -10px;
-}
-
-.btn-close,
-.btn-delete {
-  background-color: #EA0028;
-  background-image: linear-gradient(180deg, #FF9A8B 0%, #EA0028 100%);
-  transition: all .5s ease-out;
-  background-size: 1px 100px;
-  background-position: 0 -10px;
-}
-
-.btn-add:hover, .btn-save:hover, .btn-close:hover, .btn-delete:hover {
-  background-position: 1px -50px;
 }

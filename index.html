@@ -27,7 +27,7 @@
         <div class="col-2">
           TIME
         </div>
-        <button id="create-task" class="col-3 m-auto btn btn-add bi bi-plus-square">  Add Task</button>
+        <button id="create-task" class="col-3 m-auto btn btn-add bi bi-plus-square" data-bs-toggle="modal" data-bs-target="#task-form-modal">  Add Task</button>
         <button id="remove-tasks" class="col-3 m-auto btn btn-block btn-delete bi bi-trash2">  Delete All Tasks</button>
         <ul class="col-2 list-group list-group-flush align-items-start"></ul>
       </section><br/>
@@ -148,24 +148,24 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="task-form-modal">Add New Task</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
             <form>
               <div class="form-group">
-                <label for="modalTaskDescription">Task description</label>
-                <textarea class="form-control" id="modalTaskDescription" rows="3"></textarea>
-              </div>
-              <div class="form-group">
                 <label for="modalTitle">Title</label>
                 <input type="text" class="form-control" id="modalTitle" placeholder="Title" autocomplete="off" />
+              </div>
+              <div class="form-group">
+                <label for="modalTaskDescription">Task description</label>
+                <textarea class="form-control" id="modalTaskDescription" rows="3"></textarea>
               </div>
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-close" data-bs-dismiss="modal">Close</button>
             <button type="button" class="btn btn-save">Save Task</button>
           </div>
         </div>
