@@ -37,7 +37,7 @@ function timeState() {
 }
 timeState();
 
-var createTask = function(taskText, taskTitle, taskList) {
+var createTask = function(taskTitle, taskText, taskList) {
   // create elements that make up a task item
   var taskLi = $("<li>").addClass("list-group-item");
   var taskSpan = $("<span>")
@@ -128,11 +128,13 @@ $("#task-form-modal").on("shown.bs.modal", function() {
 // save button in modal was clicked
 $("#task-form-modal .btn-save").click(function() {
   // get form values
-  var taskText = $("#modalTaskDescription").val();
   var taskTitle = $("#modalTitle").val();
+  var taskText = $("#modalTaskDescription").val();
+  console.log(taskTitle)
+  console.log(taskText);
 
   if (taskText && taskTitle) {
-    createTask(taskText, taskTitle, "time8am");
+    createTask(taskTitle, taskText, "time8am");
 
     // close modal
     $("#task-form-modal").modal("hide");
@@ -142,6 +144,7 @@ $("#task-form-modal .btn-save").click(function() {
       title: taskTitle,
       text: taskText,
     });
+    console.log(tasks);
 
     saveTasks();
   }
