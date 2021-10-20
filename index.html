@@ -21,134 +21,164 @@
     </header>
 
     <main class="container">
-      <!-- Time Placeholders -->
-<!--       <div class="row align-items-center border border-info h-100">
+      
+      <!-- Add / Delete -->
+      <section class="row align-items-center h-100">
         <div class="col-2">
-          Time
+          TIME
         </div>
-        <ul class="col-3 list-group list-group-flush align-items-start">Event</ul>
-      </div> -->
-      <div class="row align-items-center border border-info" data-number="8">
+        <button id="create-task" class="col-3 m-auto btn btn-add bi bi-plus-square">  Add Task</button>
+        <button id="remove-tasks" class="col-3 m-auto btn btn-block btn-delete bi bi-trash2">  Delete All Tasks</button>
+        <ul class="col-2 list-group list-group-flush align-items-start"></ul>
+      </section><br/>
+
+      <!-- Time Blocks -->
+
+      <div class="time-block row align-items-center border border-info" data-number="8">
         <div class="col-2">
           8AM
         </div>
-        <ul id="list-time8am" class="col-8 list-group list-group-flush flex-column">test1</ul>
-        <button class="col-1 ms-auto right-add btn btn-add bi bi-plus-square hide" data-number="8">  Add</button>
-        <div class="col-1 ms-auto right-trash bi bi-trash2"> Trash</div>
+        <ul id="list-time8am" class="col-9 list-group list-group-flush flex-column"></ul>
+        <button class="col-1 ms-auto btn btn-save bi bi-save">  Save</button>
       </div>
-      <div class="row align-items-center border border-info" data-number="9">
+      <div class="time-block row align-items-center border border-info" data-number="9">
         <div class="col-2">
           9AM
         </div>
         <ul id="list-time9am" class="col-8 list-group list-group-flush flex-column"></ul>
-        <button class="col-1 ms-auto right-add btn btn-add bi bi-plus-square hide" data-number="9">  Add</button>
-        <div class="col-1 ms-auto right-trash bi bi-trash2"> Trash</div>
+        <button class="col-1 ms-auto btn btn-save bi bi-save">  Save</button>
       </div>
-      <div class="row align-items-center border border-info" data-number="10">
+      <div class="time-block row align-items-center border border-info" data-number="10">
         <div class="col-2">
           10AM
         </div>
         <ul id="list-time10am" class="col-8 list-group list-group-flush flex-column"></ul>
-        <button class="col-1 ms-auto right-add btn btn-add bi bi-plus-square hide" data-number="10">  Add</button>
-        <div class="col-1 ms-auto right-trash bi bi-trash2"> Trash</div>
+        <button class="col-1 ms-auto btn btn-save bi bi-save">  Save</button>
       </div>
-      <div class="row align-items-center border border-info" data-number="11">
+      <div class="time-block row align-items-center border border-info" data-number="11">
         <div class="col-2">
           11AM
         </div>
         <ul id="list-time11am" class="col-8 list-group list-group-flush flex-column"></ul>
-        <button class="col-1 ms-auto right-add btn btn-add bi bi-plus-square hide" data-number="11">  Add</button>
-        <div class="col-1 ms-auto right-trash bi bi-trash2"> Trash</div>
+        <button class="col-1 ms-auto btn btn-save bi bi-save">  Save</button>
       </div>
-      <div class="row align-items-center border border-info" data-number="12">
+      <div class="time-block row align-items-center border border-info" data-number="12">
         <div class="col-2">
           12PM
         </div>
         <ul id="list-time12pm" class="col-8 list-group list-group-flush flex-column"></ul>
-        <button class="col-1 ms-auto right-add btn btn-add bi bi-plus-square hide" data-number="12">  Add</button>
-        <div class="col-1 ms-auto right-trash bi bi-trash2"> Trash</div>
+        <button class="col-1 ms-auto btn btn-save bi bi-save">  Save</button>
       </div>
-      <div class="row align-items-center border border-info" data-number="13">
+      <div class="time-block row align-items-center border border-info" data-number="13">
         <div class="col-2">
           1PM
         </div>
         <ul id="list-time1pm" class="col-8 list-group list-group-flush flex-column"></ul>
-        <button class="col-1 ms-auto right-add btn btn-add bi bi-plus-square hide" data-number="13">  Add</button>
-        <div class="col-1 ms-auto right-trash bi bi-trash2"> Trash</div>
+        <button class="col-1 ms-auto btn btn-save bi bi-save">  Save</button>
       </div>
-      <div class="row align-items-center border border-info" data-number="14">
+      <div class="time-block row align-items-center border border-info" data-number="14">
         <div class="col-2">
           2PM
         </div>
         <ul id="list-time2pm" class="col-8 list-group list-group-flush flex-column"></ul>
-        <button class="col-1 ms-auto right-add btn btn-add bi bi-plus-square hide" data-number="14">  Add</button>
-        <div class="col-1 ms-auto right-trash bi bi-trash2"> Trash</div>
+        <button class="col-1 ms-auto btn btn-save bi bi-save">  Save</button>
       </div>
-      <div class="row align-items-center border border-info" data-number="15">
+      <div class="time-block row align-items-center border border-info" data-number="15">
         <div class="col-2">
           3PM
         </div>
         <ul id="list-time3pm" class="col-8 list-group list-group-flush flex-column"></ul>
-        <button class="col-1 ms-auto right-add btn btn-add bi bi-plus-square hide" data-number="15">  Add</button>
-        <div class="col-1 ms-auto right-trash bi bi-trash2"> Trash</div>
+        <button class="col-1 ms-auto btn btn-save bi bi-save">  Save</button>
       </div>
-      <div class="row align-items-center border border-info" data-number="16">
+      <div class="time-block row align-items-center border border-info" data-number="16">
         <div class="col-2">
           4PM
         </div>
         <ul id="list-time4pm" class="col-8 list-group list-group-flush flex-column"></ul>
-        <button class="col-1 ms-auto right-add btn btn-add bi bi-plus-square hide" data-number="16">  Add</button>
-        <div class="col-1 ms-auto right-trash bi bi-trash2"> Trash</div>
+        <button class="col-1 ms-auto btn btn-save bi bi-save">  Save</button>
       </div>
-      <div class="row align-items-center border border-info" data-number="17">
+      <div class="time-block row align-items-center border border-info" data-number="17">
         <div class="col-2">
           5PM
         </div>
         <ul id="list-time5pm" class="col-8 list-group list-group-flush flex-column"></ul>
-        <button class="col-1 ms-auto right-add btn btn-add bi bi-plus-square hide" data-number="17">  Add</button>
-        <div class="col-1 ms-auto right-trash bi bi-trash2"> Trash</div>
+        <button class="col-1 ms-auto btn btn-save bi bi-save">  Save</button>
       </div>
-      <div class="row align-items-center border border-info" data-number="18">
+      <div class="time-block row align-items-center border border-info" data-number="18">
         <div class="col-2">
           6PM
         </div>
         <ul id="list-time6pm" class="col-8 list-group list-group-flush flex-column"></ul>
-        <button class="col-1 ms-auto right-add btn btn-add bi bi-plus-square hide" data-number="18">  Add</button>
-        <div class="col-1 ms-auto right-trash bi bi-trash2"> Trash</div>
+        <button class="col-1 ms-auto btn btn-save bi bi-save">  Save</button>
       </div>
-      <div class="row align-items-center border border-info" data-number="19">
+      <div class="time-block row align-items-center border border-info" data-number="19">
         <div class="col-2">
           7PM
         </div>
         <ul id="list-time7pm" class="col-8 list-group list-group-flush flex-column"></ul>
-        <button class="col-1 ms-auto right-add btn btn-add bi bi-plus-square hide" data-number="19">  Add</button>
-        <div class="col-1 ms-auto right-trash bi bi-trash2"> Trash</div>
+        <button class="col-1 ms-auto btn btn-save bi bi-save">  Save</button>
       </div>
-      <div class="row align-items-center border border-info" data-number="20">
+      <div class="time-block row align-items-center border border-info" data-number="20">
         <div class="col-2">
           8PM
         </div>
         <ul id="list-time8pm" class="col-8 list-group list-group-flush flex-column"></ul>
-        <button class="col-1 ms-auto right-add btn btn-add bi bi-plus-square hide" data-number="20">  Add</button>
-        <div class="col-1 ms-auto right-trash bi bi-trash2"> Trash</div>
+        <button class="col-1 ms-auto btn btn-save bi bi-save">  Save</button>
       </div>
-      <div class="row align-items-center border border-info" data-number="21">
+      <div class="time-block row align-items-center border border-info" data-number="21">
         <div class="col-2">
           9PM
         </div>
         <ul id="list-time9pm" class="col-8 list-group list-group-flush flex-column"></ul>
-        <button class="col-1 ms-auto right-add btn btn-add bi bi-plus-square hide" data-number="21">  Add</button>
-        <div class="col-1 ms-auto right-trash bi bi-trash2"> Trash</div>
+        <button class="col-1 ms-auto btn btn-save bi bi-save">  Save</button>
       </div>
-      <div class="row align-items-center border border-info" data-number="22">
+      <div class="time-block row align-items-center border border-info" data-number="22">
         <div class="col-2">
           10PM
         </div>
         <ul id="list-time10pm" class="col-8 list-group list-group-flush flex-column"></ul>
-        <button class="col-1 ms-auto right-add btn btn-add bi bi-plus-square hide" data-number="22">  Add</button>
-        <div class="col-1 ms-auto right-trash bi bi-trash2"> Trash</div>
+        <button class="col-1 ms-auto btn btn-save bi bi-save">  Save</button>
       </div>
     </main>
+
+    <!-- Modal -->
+    <div class="modal fade" id="task-form-modal" tabindex="-1" role="dialog" aria-labelledby="task-form-modal"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="task-form-modal">Add New Task</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="modalTaskDescription">Task description</label>
+                <textarea class="form-control" id="modalTaskDescription" rows="3"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="modalTitle">Title</label>
+                <input type="text" class="form-control" id="modalTitle" placeholder="Title" autocomplete="off" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-save">Save Task</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="mt-auto overflow-hidden" id="trash">
+        <div class="w-100 p-3 text-center bottom-trash">
+          <span class="bi bi-trash"></span>Drop Here to Remove.
+        </div>
+      </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

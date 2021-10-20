@@ -88,7 +88,7 @@ main {
   background-color: rgba(0,0,0,0.9);
 }
 
-.right-trash {
+.bottom-trash {
   display: none;
   color: #f1f1f1;
   height: 100%;
@@ -102,17 +102,13 @@ main {
 
 }
 
-.right-trash-drag {
+.bottom-trash-drag {
   transform: translateY(0);
   opacity: 1;
 }
 
-.right-trash-active {
+.bottom-trash-active {
   background-color: rgba(234, 0, 39, 1)
-}
-
-.hide {
-  display: none;
 }
 
 .btn-add,
