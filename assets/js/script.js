@@ -45,7 +45,7 @@ var createTask = function(taskTitle, taskText, taskList) {
   // create elements that make up a task item
   var taskLi = $("<li>").addClass("list-group-item");
   var taskSpan = $("<span>")
-    .addClass("badge rounded-pill bg-info")
+    .addClass("badge rounded-pill bg-primary")
     .text(taskTitle);
   var taskP = $("<p>")
     .addClass("m-1")
@@ -166,7 +166,7 @@ $(".list-group").on("change", "input[type='text']", function() {
 
   // recreate span and insert in place of input element
   var taskSpan = $("<span>")
-    .addClass("badge rounded-pill bg-info")
+    .addClass("badge rounded-pill bg-primary")
     .text(title);
     $(this).replaceWith(taskSpan);
 });
