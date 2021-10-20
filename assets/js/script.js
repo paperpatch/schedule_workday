@@ -275,7 +275,7 @@ $(".list-group").sortable({
 
 $("#trash").droppable({
   accept: ".card .list-group-item",
-  tolerance: "touch",
+  tolerance: "pointer",
   drop: function(event, ui) {
     // remove dragged element from the dom
     ui.draggable.remove();
