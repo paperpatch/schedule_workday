@@ -16,32 +16,36 @@ function timeState() {
 
   // make data-attribute values into an array
   var dataArray = [];
-  $('.time-block').each( function() {
+  $('.card').each( function() {
     dataArray.push( $(this).attr("data-number"));
   })
 
   // remove any old classes
-  let changeClass = $(".time-block");
+  let changeClass = $(".card");
   $(changeClass).removeClass("past present future");
 
   for (let i=0; i<dataArray.length; i++) {
-    if (time < dataArray[i]) {
+    if (time < parseInt(dataArray[i])) {
       $(changeClass[i]).addClass("future");
-    } else if (time === dataArray[i]) {
+    } else if (time === parseInt(dataArray[i])) {
       $(changeClass[i]).addClass("present");
-    } else if (time > dataArray[i]) {
+    } else if (time > parseInt(dataArray[i])) {
       $(changeClass[i]).addClass("past");
     }
   }
+
   setInterval(timeState, 600000); // every 10 minutes
 }
 timeState();
+
+
+/* Create, Load, and Save Tasks Section*/
 
 var createTask = function(taskTitle, taskText, taskList) {
   // create elements that make up a task item
   var taskLi = $("<li>").addClass("list-group-item");
   var taskSpan = $("<span>")
-    .addClass("badge badge-primary badge-pill")
+    .addClass("badge rounded-pill bg-info")
     .text(taskTitle);
   var taskP = $("<p>")
     .addClass("m-1")
@@ -49,9 +53,6 @@ var createTask = function(taskTitle, taskText, taskList) {
 
   // append span and p element to parent li
   taskLi.append(taskSpan, taskP);
-
-  // check due date
-  // auditTask(taskLi);
 
   // append to ul list on the page
   $("#list-" + taskList).append(taskLi);
@@ -165,7 +166,7 @@ $(".list-group").on("change", "input[type='text']", function() {
 
   // recreate span and insert in place of input element
   var taskSpan = $("<span>")
-    .addClass("badge badge-primary badge-pill")
+    .addClass("badge rounded-pill bg-info")
     .text(title);
     $(this).replaceWith(taskSpan);
 });
@@ -215,6 +216,61 @@ $(".list-group").on("blur", "textarea", function() {
 });
 
 
+
+/* Draggable/Sortable Feature Section */
+
+$(".list-group").sortable({
+  // enable dragging across lists
+  connectWith: $(".list-group"),
+  scroll: false,
+  tolerance: "pointer",
+  helper: "clone",
+  activate: function(event, ui) {
+    $(this).addClass("dropover");
+    $(".bottom-trash").addClass("bottom-trash-drag");
+  },
+  deactivate: function(event, ui) {
+    $(this).removeClass("dropover");
+    $(".bottom-trash").removeClass("bottom-trash-drag");
+  },
+  over: function(event) {
+    $(event.target).addClass("dropover-active");
+  },
+  out: function(event) {
+    $(event.target).removeClass("dropover-active");
+  },
+  update: function() {
+    var tempArr = [];
+  
+    // loop over current set of children in sortable list
+    $(this)
+      .children()
+      .each(function() {
+        // save values in temp array
+        tempArr.push({
+          title: $(this)
+          .find("span")
+          .text()
+          .trim(),
+          text: $(this)
+            .find("p")
+            .text()
+            .trim(),
+        });
+      });
+
+    // trim down list's ID to match object property
+    var arrName = $(this)
+      .attr("id")
+      .replace("list-", "");
+
+    // update array on tasks object and save
+    tasks[arrName] = tempArr;
+    saveTasks();
+  }
+});
+
+
 /* Trash Droppable Icon Section */
 
 $("#trash").droppable({
@@ -235,10 +291,6 @@ $("#trash").droppable({
 });
 
 
-
-
-
-
 /* Remove All Tasks Section */
 
 $("#remove-tasks").on("click", function() {
@@ -246,16 +298,8 @@ $("#remove-tasks").on("click", function() {
     tasks[key].length = 0;
     $("#list-" + key).empty();
   }
-  console.log(tasks);
   saveTasks();
 });
 
 // load tasks for the first time
 loadTasks();
-
-// audit task due dates every 30 minutes
-setInterval(function() {
-  $(".card .list-group-item").each(function() {
-    auditTask($(this));
-  });
-}, 1800000);

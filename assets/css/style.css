@@ -1,5 +1,9 @@
 /* Main Section */
 
+ul.list-group {
+  min-height: 5px;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -27,6 +31,10 @@ main {
   margin: 3rem;
 }
 
+.card {
+  margin: 1px;
+}
+
 /* Time Block Section */
 
 /* .row {
@@ -40,17 +48,17 @@ main {
 }
 
 .past {
-  background-color: #d3d3d3;
+  background-color: rgba(207, 207, 207, 0.521);
   color: black;
 }
 
 .present {
-  background-color: #ff6961;
+  background-color: rgb(250, 255, 183);
   color: black;
 }
 
 .future {
-  background-color: #77dd77;
+  background-color: #b2d4ad;
   color: black;
 }
 
