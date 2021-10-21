@@ -34,7 +34,7 @@ function timeState() {
     }
   }
 
-  setInterval(timeState, 600000); // every 10 minutes
+  setInterval(timeState, 60 * 1000); // every minute
 }
 timeState();
 
