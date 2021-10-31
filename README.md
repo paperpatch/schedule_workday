@@ -17,6 +17,7 @@ Built With:
 - JavaScript
 - Bootstrap
 - jQuery
+- Open Weather API
 
 ## HOW TO USE
 
