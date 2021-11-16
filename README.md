@@ -2,10 +2,10 @@
 
 ## CONTENTS OF THIS FILE
 
-* Introduction
-* How to Use
-* Access
-* Contribution
+* [Introduction](#introduction)
+* [How to Use](#how-to-use)
+* [Access](#access)
+* [Contribution](#contribution)
 
 ## INTRODUCTION
 
